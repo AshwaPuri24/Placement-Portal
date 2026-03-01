@@ -1,0 +1,33 @@
+.public-info-root {
+  min-height: calc(100vh - 80px);
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 0% 0%, #e6efff 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, #eef4ff 0%, transparent 40%),
+    #f7faff;
+}
+
+.public-info-card {
+  width: min(760px, 100%);
+  background: var(--jims-card);
+  border: 1px solid var(--jims-border);
+  border-radius: 1rem;
+  padding: 1.2rem 1.3rem;
+}
+
+.public-info-card h1 {
+  margin: 0;
+  color: var(--jims-maroon);
+}
+
+.public-info-card p {
+  margin: 0.5rem 0 0;
+  color: var(--jims-ink-soft);
+}
+
+.public-info-card ul {
+  margin: 0.75rem 0 0;
+  color: var(--jims-ink-soft);
+}

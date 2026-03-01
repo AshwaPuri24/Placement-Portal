@@ -1,0 +1,41 @@
+.panel-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel-header {
+  background: var(--jims-card);
+  border: 1px solid var(--jims-border);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+}
+
+.panel-header h1 {
+  margin: 0;
+  color: var(--jims-ink);
+  font-size: 1.35rem;
+}
+
+.panel-header p {
+  margin: 0.45rem 0 0;
+  color: var(--jims-ink-soft);
+}
+
+.panel-card {
+  background: var(--jims-card);
+  border: 1px solid var(--jims-border);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+}
+
+.panel-card h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  color: var(--jims-ink);
+}
+
+.panel-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--jims-ink-soft);
+}

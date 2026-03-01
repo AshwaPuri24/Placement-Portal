@@ -1,0 +1,101 @@
+.profile-root {
+  display: grid;
+}
+
+.profile-main {
+  background: var(--jims-card);
+  border: 1px solid var(--jims-border);
+  border-radius: 1rem;
+  max-width: 760px;
+  width: 100%;
+  padding: 1rem 1.1rem;
+}
+
+.profile-main h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: var(--jims-ink);
+}
+
+.profile-placeholder {
+  color: var(--jims-ink-soft);
+  font-size: 0.95rem;
+}
+
+.profile-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.65rem;
+}
+
+.profile-field {
+  border: 1px solid var(--jims-border);
+  border-radius: 0.75rem;
+  padding: 0.7rem;
+}
+
+.profile-field span {
+  display: block;
+  color: var(--jims-ink-soft);
+  font-size: 0.85rem;
+}
+
+.profile-field strong {
+  color: var(--jims-ink);
+}
+
+.profile-error {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--jims-danger);
+  background: #fef2f2;
+  color: var(--jims-danger);
+  font-size: 0.85rem;
+}
+
+.profile-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.profile-links a {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--jims-border);
+  color: var(--jims-maroon-dark);
+  background: #fff;
+}
+
+.password-form {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.password-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--jims-ink-soft);
+  font-weight: 600;
+}
+
+.password-form input {
+  border: 1px solid var(--jims-border);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.password-form button {
+  width: fit-content;
+  border: 0;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--jims-maroon);
+  color: #ffffff;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+const API_BASE = 'http://localhost:3000/api'
+
+export async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
+  const token = localStorage.getItem('placement_token')
+  const res = await fetch(`${API_BASE}${path}`, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(options?.headers ?? {}),
+    },
+  })
+
+  const data = await res.json().catch(() => ({}))
+
+  if (!res.ok) {
+    let message = 'Request failed'
+
+    if (typeof data === 'string') {
+      message = data
+    } else if (data && typeof (data as any).error === 'string') {
+      message = (data as any).error
+    } else if (
+      data &&
+      typeof (data as any).error === 'object' &&
+      typeof (data as any).error.message === 'string'
+    ) {
+      message = (data as any).error.message
+    }
+
+    throw new Error(message)
+  }
+
+  return data as T
+}

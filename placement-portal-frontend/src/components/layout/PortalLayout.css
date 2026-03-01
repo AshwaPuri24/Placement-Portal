@@ -1,0 +1,218 @@
+.portal-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background:
+    radial-gradient(circle at 20% 10%, #eef4ff 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, #eff5ff 0%, transparent 35%),
+    linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+}
+
+.portal-sidebar {
+  background: linear-gradient(180deg, var(--jims-maroon) 0%, var(--jims-maroon-dark) 100%);
+  color: #f1f5f9;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #315da8;
+}
+
+.portal-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.portal-logo-image {
+  width: 92px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.35rem;
+  background: #ffffff;
+  padding: 0.2rem;
+}
+
+.portal-brand-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.portal-brand-subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #dbe5f7;
+}
+
+.portal-nav {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.portal-nav-link {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.65rem;
+  color: #e8effd;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.portal-nav-link:hover {
+  background: #2a5aac;
+  color: #ffffff;
+}
+
+.portal-nav-link.active {
+  background: linear-gradient(90deg, var(--jims-gold), #e2bf78);
+  color: #1f2430;
+  font-weight: 700;
+}
+
+.portal-sidebar-footer {
+  margin-top: auto;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.portal-secondary-link {
+  font-size: 0.9rem;
+  color: #e8effd;
+}
+
+.portal-logout-btn {
+  padding: 0.65rem 0.75rem;
+  border: 0;
+  border-radius: 0.65rem;
+  background: #16366f;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.portal-main-wrap {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.portal-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--jims-border);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.portal-menu-btn {
+  border: 0;
+  background: var(--jims-maroon);
+  color: #fff;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  display: none;
+  font-size: 1.1rem;
+}
+
+.portal-welcome {
+  margin: 0;
+  color: var(--jims-ink);
+  font-weight: 600;
+}
+
+.portal-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.portal-profile-wrap {
+  position: relative;
+}
+
+.portal-profile-btn {
+  border: 1px solid var(--jims-border);
+  background: #fff;
+  color: var(--jims-maroon-dark);
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.portal-profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.45rem);
+  min-width: 170px;
+  border: 1px solid var(--jims-border);
+  border-radius: 0.65rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.14);
+  display: grid;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.portal-profile-dropdown a,
+.portal-profile-dropdown button {
+  padding: 0.6rem 0.7rem;
+  font-size: 0.9rem;
+  color: var(--jims-ink-soft);
+  background: #fff;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.portal-profile-dropdown a:hover,
+.portal-profile-dropdown button:hover {
+  background: #eef4ff;
+  color: var(--jims-maroon-dark);
+}
+
+.portal-content {
+  padding: 1.25rem;
+}
+
+.portal-overlay {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .portal-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    z-index: 30;
+    transition: left 0.25s ease;
+  }
+
+  .portal-sidebar.open {
+    left: 0;
+  }
+
+  .portal-overlay.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 75, 156, 0.35);
+    z-index: 20;
+  }
+
+  .portal-menu-btn {
+    display: inline-block;
+  }
+}
